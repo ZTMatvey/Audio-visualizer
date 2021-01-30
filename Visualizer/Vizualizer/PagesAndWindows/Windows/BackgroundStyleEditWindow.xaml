@@ -1,0 +1,264 @@
+﻿<Window x:Class="Visualizer.PagesAndWindows.BackgroundStyleEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Visualizer.PagesAndWindows.Windows"
+        xmlns:controls="clr-namespace:Visualizer.PagesAndWindows.Controls"
+        mc:Ignorable="d"
+        Title="Редактирование стилей задних фонов при визуализации"
+        Height="650" Width="450" 
+        Topmost="True"
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        AllowsTransparency="True" 
+        Background="Transparent">
+
+    <Border Background="{DynamicResource MainBackGroundColor}" Width="Auto" Height="Auto" Name="windowFrame"
+          BorderBrush="{DynamicResource MainBorderColor}"
+          BorderThickness="5"
+          CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock 
+                Text="Редактирование стилей задних фонов при визуализации"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="15 2 2 2"
+                FontSize="{Binding Path=ItemFontSize, Mode=TwoWay}"/>
+            <Button 
+                    Height="25" 
+                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                    HorizontalAlignment="Right"
+                    Margin="5"
+                    BorderThickness="1" Content="X" FontSize="15" Click="Button_Click_1"/>
+            <Grid Name="MGrid" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock 
+                            Text="Стиль:"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="5"
+                            FontSize="{Binding Path=FontSize, Mode=TwoWay}"/>
+                        <ComboBox 
+                            Margin="5"
+                            Name="CustomStylesComboBox"
+                            Grid.Column="1"
+                            FontSize="{Binding Path=ItemFontSize, Mode=TwoWay}"/>
+                        <Grid Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".5*"/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock 
+                                    Text="Начальная точка"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="1"
+                                    FontSize="{Binding Path=ItemFontSize, Mode=TwoWay}"/>
+                                <controls:SliderControl 
+                                    Grid.Row="1"
+                                    Text="X"
+                                    MinValue="0" MaxValue="1"
+                                    IsOnlyDoubleNumbers="True"
+                                    x:Name="StartPointXControl"
+                                    SliderStyle="{StaticResource ResourceKey=AlphaSliderStyle}"
+                                    Slider.ValueChanged="DownB_ValueChanged"/>
+                                <controls:SliderControl 
+                                    Grid.Row="2"
+                                    Text="Y"
+                                    MinValue="0" MaxValue="1"
+                                    IsOnlyDoubleNumbers="True"
+                                    x:Name="StartPointYControl"
+                                    SliderStyle="{StaticResource ResourceKey=AlphaSliderStyle}"
+                                    Slider.ValueChanged="DownB_ValueChanged"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".5*"/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock 
+                                    Text="Конечная точка"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="1"
+                                    FontSize="{Binding Path=ItemFontSize, Mode=TwoWay}"/>
+                                <controls:SliderControl 
+                                    Grid.Row="1"
+                                    Text="X"
+                                    MinValue="0" MaxValue="1"
+                                    IsOnlyDoubleNumbers="True"
+                                    x:Name="EndPointXControl"
+                                    SliderStyle="{StaticResource ResourceKey=AlphaSliderStyle}"
+                                    Slider.ValueChanged="DownB_ValueChanged"/>
+                                <controls:SliderControl 
+                                    Grid.Row="2"
+                                    Text="Y"
+                                    MinValue="0" MaxValue="1"
+                                    IsOnlyDoubleNumbers="True"
+                                    x:Name="EndPointYControl"
+                                    SliderStyle="{StaticResource ResourceKey=AlphaSliderStyle}"
+                                    Slider.ValueChanged="DownB_ValueChanged"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width=".5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  Text="Настройка точек стиля:" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Grid.ColumnSpan="2"
+                            Margin="5"
+                           FontSize="{Binding Path=FontSize, Mode=TwoWay}"/>
+                        <ListBox Margin="5" Name="StyleColorsListBox" Grid.Row="1"/>
+                        <Grid Grid.Column="1" Grid.Row="1" Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button
+                                Name="AddNewPoint"
+                                Content="Добавть точку"
+                                Click="AddNewPoint_Click"/>
+                            <Button 
+                                Grid.Row="1" 
+                                Margin="2" 
+                                Content="Удалить данную точку точку"
+                                Name="DeleteCurrentPoint"
+                                Click="DeleteCurrentPoint_Click"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height=".1*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".25*"/>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width=".75*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="2"
+                       Text="n-ая часть часть" 
+                       FontSize="{Binding Path=FontSize, Mode=TwoWay}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+                    <Border
+                        CornerRadius="{DynamicResource DefaultCornerRadius}"
+                        BorderThickness="4"
+                        BorderBrush="{DynamicResource ForegroundColor}"
+                        Grid.Column="3"
+                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                        Margin="5"
+                        Name="AllColorsBrushBorder"/>
+                    <Border
+                        CornerRadius="{DynamicResource DefaultCornerRadius}"
+                        BorderThickness="4"
+                        BorderBrush="{DynamicResource ForegroundColor}"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                        Margin="5"
+                        Name="CurrentColorBrushBorder"/>
+
+                    <Grid Grid.Row="1" Grid.ColumnSpan="4">
+                        <controls:SliderControl 
+                            Text="A"
+                            MinValue="0" MaxValue="255"
+                            IsOnlyDoubleNumbers="False"
+                            x:Name="DownA"
+                            SliderStyle="{StaticResource ResourceKey=AlphaSliderStyle}"
+                            Slider.ValueChanged="DownB_ValueChanged"/>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.ColumnSpan="4">
+                        <controls:SliderControl 
+                            Text="R"
+                            MinValue="0" MaxValue="255"
+                            IsOnlyDoubleNumbers="False"
+                            x:Name="DownR"
+                            SliderStyle="{StaticResource ResourceKey=RedSliderStyle}"
+                            Slider.ValueChanged="DownB_ValueChanged"/>
+                    </Grid>
+                    <Grid Grid.Row="3" Grid.ColumnSpan="4">
+                        <controls:SliderControl 
+                            Text="G"
+                            MinValue="0" MaxValue="255"
+                            IsOnlyDoubleNumbers="False"
+                            x:Name="DownG"
+                            SliderStyle="{StaticResource ResourceKey=GreenSliderStyle}"
+                            Slider.ValueChanged="DownB_ValueChanged"/>
+                    </Grid>
+                    <Grid Grid.Row="4" Grid.ColumnSpan="4">
+                        <controls:SliderControl 
+                            Text="B"
+                            MinValue="0" MaxValue="255"
+                            IsOnlyDoubleNumbers="False"
+                            x:Name="DownB"
+                            SliderStyle="{StaticResource ResourceKey=BlueSliderStyle}"
+                            Slider.ValueChanged="DownB_ValueChanged"/>
+                    </Grid>
+                    <Grid Grid.Row="6" Grid.ColumnSpan="4">
+                        <controls:SliderControl 
+                            Text="Offset"
+                            MinValue="0" MaxValue="100"
+                            IsOnlyDoubleNumbers="True"
+                            x:Name="OffsetSlider"
+                            SliderStyle="{StaticResource ResourceKey=BlueSliderStyle}"
+                            Slider.ValueChanged="DownB_ValueChanged"/>
+                    </Grid>
+
+                </Grid>
+                <Button 
+                    Grid.Row="2"
+                    Margin="15" 
+                    Content="Сохранить"
+                    Click="Button_Click"
+                    FontSize="{Binding Path=ItemFontSize, Mode=TwoWay}"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vis="clr-namespace:Visualizer.Visual"
+                    xmlns:Sys="clr-namespace:System;assembly=mscorlib">
+
+    <Sys:Double x:Key="BorderThinkessInNum">3</Sys:Double>
+    <Sys:Double x:Key="BigBorderThinkessInNum">5</Sys:Double>
+    <Sys:Double x:Key="RadiusInNum">10.0</Sys:Double>
+    <CornerRadius 
+        x:Key="DefaultCornerRadius"
+        TopLeft="{StaticResource RadiusInNum}"
+        TopRight="{StaticResource RadiusInNum}"
+        BottomRight="{StaticResource RadiusInNum}"
+        BottomLeft="{StaticResource RadiusInNum}"/>
+
+    <Color x:Key="MainBackGroundColorInColor">#000000</Color>
+    <SolidColorBrush x:Key="MainBackGroundColor" Color="{StaticResource MainBackGroundColorInColor}"/>
+    <Color x:Key="MainBorderColorInColor">gray</Color>
+    <SolidColorBrush x:Key="MainBorderColor" Color="{StaticResource MainBorderColorInColor}"/>
+
+    <Color x:Key="PressedGlyphColorInColor">#FFFFFF</Color>
+    <SolidColorBrush x:Key="PressedGlyphColor" Color="{StaticResource PressedGlyphColorInColor}"/>
+    <Color x:Key="MouseOverGlyphColorInColor">#000000</Color>
+    <SolidColorBrush x:Key="MouseOverGlyphColor" Color="{StaticResource MouseOverGlyphColorInColor}"/>
+    <Color x:Key="StaticGlyphColorInColor">#606060</Color>
+    <SolidColorBrush x:Key="StaticGlyphColor" Color="{StaticResource StaticGlyphColorInColor}"/>
+
+    <SolidColorBrush x:Key="MouseOverOnSimpleButtonBackground" Color="#e1e1e1"/>
+    <SolidColorBrush x:Key="MouseOverOnSimpleButtonBorder" Color="#2f2f2f"/>
+    <SolidColorBrush x:Key="PressedOnSimpleButtonBackground" Color="#171717"/>
+    <SolidColorBrush x:Key="PressedOnSimpleButtonBorder" Color="#070707"/>
+
+    <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#e1e1e1"/>
+    <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA"/>
+    <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA"/>
+
+    <SolidColorBrush x:Key="MouseOverSimpleButtonColor" Color="#999"/>
+    <SolidColorBrush x:Key="PressedSimpleButtonColor" Color="#555"/>
+
+    <SolidColorBrush x:Key="LightColorStaticOnNonImportantItems" Color="Transparent"/>
+    <SolidColorBrush x:Key="LightColorForMouseOverOnNonImportantItems" Color="#222"/>
+
+    <Color x:Key="ForegroundColorInColor">#fff</Color>
+    <Color x:Key="ActivatedForegroundColorInColor">#505050</Color>
+    <Color x:Key="GotFocusForegroundColorInColor">#070707</Color>
+    <SolidColorBrush x:Key="ForegroundColor" Color="{StaticResource ForegroundColorInColor}"/>
+    <SolidColorBrush x:Key="TransparentColor" Color="Transparent"/>
+
+    <Color x:Key="ColorForPopupInColor">#777</Color>
+    <SolidColorBrush x:Key="ColorForPopup" Color="{StaticResource ColorForPopupInColor}"/>
+
+    <Color x:Key="AnimationMouseOverToColor">#ccc</Color>
+    <Color x:Key="AnimationMouseButtonDownToColor">#444</Color>
+    <Color x:Key="AnimationBorderColor">DarkGray</Color>
+</ResourceDictionary>

@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="Visualizer.PagesAndWindows.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Visualizer.PagesAndWindows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="Transparent" Name="MGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Text="Пользовательское поле:" Grid.Row="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"/>
+        <TextBlock
+            Text="Тип визуализации:" 
+            Grid.Row="2" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"/>
+        <ComboBox 
+            Margin="5" 
+            Grid.Column="1" Grid.Row="2" 
+            Name="ScStrCB"/>
+        <Button 
+            Name="CustomSettings" 
+            Grid.Row="0" Grid.Column="1"
+            Content="Настройки пользовательского поля"
+            Margin="5"/>
+        <Button 
+            Name="BackgroundSettings" 
+            Grid.Row="0" Grid.Column="2"
+            Content="Настройки заднего фона при визуализации"
+            Margin="5"/>
+        <TextBlock
+            Text="Тип отрисовки линий:" 
+            Grid.Row="6" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"/>
+        <ComboBox 
+            Margin="5" 
+            Grid.Column="1" Grid.Row="6" 
+            Name="DrawLineStgCB"/>
+        
+        <TextBlock
+            Text="Тип линий:" 
+            Grid.Row="4" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center"/>
+        <ComboBox 
+            Margin="5" 
+            Grid.Column="1" Grid.Row="4" 
+            Name="ShapeTypesCB"/>
+
+        <TextBlock
+            Text="Частота обновления кадров (милисекунд):"
+            Grid.Row="10" 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"/>
+        <TextBox
+            Grid.Column="1" Grid.Row="10"
+            Margin="12" Name="FPSTB"
+            TextChanged="TextBox_TextChanged"
+            TextWrapping="Wrap"/>
+        <Button 
+            Grid.Column="1" Grid.Row="8"
+            Content="Настройка системы частиц" 
+            Name="OpenPartSysSettingsBut"/>
+        
+            <Button 
+            Grid.Row="14" Grid.Column="1"
+            BorderThickness="10"
+            Content="Назад"
+            Click="Button_Click"/>
+
+        <TextBlock
+            Text="Количество линий визуализации"
+            Grid.Row="12" 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"/>
+        <TextBox
+            Grid.Column="1" Grid.Row="12"
+            Margin="12" Name="LineCountTB"
+            TextChanged="TextBox_TextChanged"
+            TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>

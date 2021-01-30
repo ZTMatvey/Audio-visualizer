@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="LedControllerWS2801.Spectrum"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" Width="325.203">
+    <StackPanel>
+        <StackPanel.LayoutTransform>
+            <RotateTransform Angle="-90"/>
+        </StackPanel.LayoutTransform>
+        <ProgressBar x:Name="Bar01" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#0000ff" Background="White"/>
+        <ProgressBar x:Name="Bar02" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#0033ff" Background="White"/>
+        <ProgressBar x:Name="Bar03" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#0099ff" Background="White"/>
+        <ProgressBar x:Name="Bar04" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#00ccff" Background="White"/>
+        <ProgressBar x:Name="Bar05" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#00ffff" Background="White"/>
+        <ProgressBar x:Name="Bar06" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#00ff99" Background="White"/>
+        <ProgressBar x:Name="Bar07" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#00ff66" Background="White"/>
+        <ProgressBar x:Name="Bar08" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#00ff33" Background="White"/>
+        <ProgressBar x:Name="Bar09" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#33ff00" Background="White"/>
+        <ProgressBar x:Name="Bar10" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#66ff00" Background="White"/>
+        <ProgressBar x:Name="Bar11" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#99ff00" Background="White"/>
+        <ProgressBar x:Name="Bar12" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#ffff00" Background="White"/>
+        <ProgressBar x:Name="Bar13" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#ffcc00" Background="White"/>
+        <ProgressBar x:Name="Bar14" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#ff9900" Background="White"/>
+        <ProgressBar x:Name="Bar15" Height="15" Margin="5" Minimum="0" Maximum="255" Value="0" Foreground="#ff6600" Background="White"/>
+        <ProgressBar x:Name="Bar16" Height="15" Margin="5,0" Minimum="0" Maximum="255" Value="0" Foreground="#ff0000" Background="White"/>
+    </StackPanel>
+</UserControl>
